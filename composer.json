@@ -1,5 +1,5 @@
 {
-    "name": "youcode/mvc",
+    "name": "youcode/youevent",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
