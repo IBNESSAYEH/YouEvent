@@ -14,7 +14,7 @@ class App {
         return explode("/", $url);
     }
     
-    public static function loadController() {
+    public static function  loadController() {
         $url = self::splitURL();
         $controllerName = ucwords($url[0]) . "Controller";
         $controllerClass = "App\\controllers\\" . $controllerName;
