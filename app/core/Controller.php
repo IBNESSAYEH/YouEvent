@@ -11,6 +11,7 @@ class Controller {
         $file = __DIR__ . "/../views/$filename.php";
     
         if (file_exists($file)) {
+            
             require $file;
         } else {
            
