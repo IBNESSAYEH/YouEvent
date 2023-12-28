@@ -46,5 +46,23 @@ class Database{
 
 
 
+    // get one row from database
+    public function get_one_row($query, $data = []){
+        $con = $this->connect();
+        $stmt = $con->prepare($query);
+        $check = $stmt->execute($data); 
+        if($check){
+            $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+            if(is_array($result) && count($result)){
+                return $result;
+            }else{
+                return false;
+            }
+        }
+
+    }
+
+
+
 
 }

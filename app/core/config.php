@@ -8,4 +8,4 @@ define("DBHOST","localhost");
 define("DBUSER","root");
 define("DBPASSWORD","");
 
-// src = "<?=ROOT?>assets/images/img.gif"
+// src = "<?=ROOTassets/images/img.gif"
