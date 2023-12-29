@@ -93,7 +93,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                          <form method="post" action="update.php" >
+                          <form method="post"  >
                           <div class="container mt-5">
                         <h2>Formulaire des events</h2>
                       
