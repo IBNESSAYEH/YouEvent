@@ -61,9 +61,9 @@
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="navbar-content">
-                                                    <span>JS Krishna</span>
+                                                    <span>Organisateur</span>
                                                     <p class="text-muted small">
-                                                        me@jskrishna.com
+                                                        me@org.com
                                                     </p>
                                                     <div class="divider">
                                                     </div>
@@ -80,28 +80,41 @@
                 <div class="user-dashboard">
                     <h1>Hello,Organisateur</h1>
                 </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
+                  <!-- Bouton Modifier -->
+                  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      modifier
+                    </button>
+                  <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                          <form method="post" action="update.php" >
+                          <div class="container mt-5">
+                        <h2>Formulaire d'Article</h2>
+                      
+                            <div class="form-group">
+                                <label for="titre">Titre de l'article :</label>
+                                <input type="text" class="form-control" id="titre" name="nouveau_titre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contenu">Contenu de l'article :</label>
+                                <textarea class="form-control" id="contenu" name="nouveau_contenu" rows="5" value="" required></textarea>
+                            </div>
+                        
+                    </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-dark" name="Ajouter" >modifier</button></form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
