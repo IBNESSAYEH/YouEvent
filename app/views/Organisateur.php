@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assestes/style.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -81,9 +81,9 @@
                     <h1>Hello,Organisateur</h1>
                 </div>
 
-                  <!-- Bouton Modifier -->
+                  <!-- Bouton  -->
                   <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      modifier
+                      Ajouter événement
                     </button>
                   <!-- Modal -->
                     <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -95,14 +95,18 @@
                           <div class="modal-body">
                           <form method="post" action="update.php" >
                           <div class="container mt-5">
-                        <h2>Formulaire d'Article</h2>
+                        <h2>Formulaire des events</h2>
                       
                             <div class="form-group">
-                                <label for="titre">Titre de l'article :</label>
+                                <label for="titre">Titre de l'event :</label>
                                 <input type="text" class="form-control" id="titre" name="nouveau_titre" required>
                             </div>
                             <div class="form-group">
-                                <label for="contenu">Contenu de l'article :</label>
+                                <label for="titre">Artiste:</label>
+                                <input type="text" class="form-control" id="titre" name="nouveau_titre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contenu">description:</label>
                                 <textarea class="form-control" id="contenu" name="nouveau_contenu" rows="5" value="" required></textarea>
                             </div>
                         
@@ -110,7 +114,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-dark" name="Ajouter" >modifier</button></form>
+                            <button type="submit" class="btn btn-dark" name="Ajouter" >Ajouter</button></form>
                           </div>
                         </div>
                       </div>
