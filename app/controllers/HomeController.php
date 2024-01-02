@@ -8,7 +8,7 @@ use App\models\EventsModel;
 class HomeController extends Controller{
     public function index($a = []){
         
-        $a =   $a[0] ?? []  ;
+        $a =   $a[0] ?? []   ;
         
           
         
