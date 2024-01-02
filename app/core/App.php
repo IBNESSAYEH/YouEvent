@@ -18,11 +18,25 @@ class App {
         $url = self::splitURL();
         $controllerName = ucwords($url[0]) . "Controller";
         $controllerClass = "App\\controllers\\" . $controllerName;
-    
+
+        self::$controller = new $controllerClass();
+
+        if(!empty($url[1])){
+
+                self::$method = $url[1];
+                
+   
+        }
+
+
         if (class_exists($controllerClass)) {
             self::$controller = new $controllerClass();
             if(method_exists(self::$controller,self::$method)){
-                call_user_func_array([self::$controller,self::$method],[]);
+              
+                $url = count($url) > 2 ? array_slice($url, 2) : [];
+
+                call_user_func_array([self::$controller,self::$method],$url);
+               
             } else {
         
                 self::$controller = new _404();

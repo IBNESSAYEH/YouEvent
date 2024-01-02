@@ -6,9 +6,12 @@ use App\core\Database;
 
 class Model extends Database{
 
-    protected $table = "events";
+    protected $table ;
     
-
+    public function finAll(){
+        $query = "SELECT * from $this->table ";
+        return $this->query($query);
+    }
 
     public function where($data = [], $data_not = []){
         $query = "SELECT * from $this->table where ";
@@ -60,6 +63,17 @@ class Model extends Database{
             return false;
     }
     public function insert($data){
+
+        // if(!empty($this->allowedColumns)){
+        //     foreach($data as $key => $value){
+        //         if(!in_array($key, $this->allowedColumns)){
+        //             unset($data[$key]);
+        //         }
+        //     }
+        // }
+
+
+
         $keys = array_keys($data);
         $query = "INSERT into $this->table  (".implode(" , ",$keys).") VALUES (:".implode(" , :",$keys).") ";
         
