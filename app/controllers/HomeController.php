@@ -5,22 +5,22 @@ namespace App\controllers;
 use App\core\Controller;
 use App\models\EventsModel;
 
-class HomeController extends Controller{
-    public function index($a = []){
+class HomeController {
+    
+    use Controller;
+    use EventsModel;
+
+    public function index() {
+        $events = $this->getEvents(); // Assuming getEvents is a method in EventsModel trait
         
-        $a =   $a[0] ?? []   ;
-        
-          
-        
-        self::view('home');
+        // Assuming you have a method like render in your Controller trait for rendering views
+        self::view('home', ['events' => $events]);
     }
-    public function edit(){
-        
-        
-          
-        
+
+    public function edit() {
+        // Your edit method logic here
+
+        // Assuming you have a method like render in your Controller trait for rendering views
         self::view('home');
     }
 }
-
-
