@@ -7,16 +7,16 @@ use PDO;
 use PDOException;
 
 
-require "config.php";
-class Database{
+
+trait Database{
 
    
-    private $DBNAME = DBNAME;
-    private $DBUSER = DBUSER;
-    private $DBHOST = DBHOST;
-    private $DBPASSWORD = DBPASSWORD;
+    protected $DBNAME = DBNAME;
+    protected $DBUSER = DBUSER;
+    protected $DBHOST = DBHOST;
+    protected $DBPASSWORD = DBPASSWORD;
 
-    private function connect(){
+    protected function connect(){
         try {
             $con = new PDO("mysql:host=$this->DBHOST;dbname=$this->DBNAME", $this->DBUSER, $this->DBPASSWORD);
             // set the PDO error mode to exception

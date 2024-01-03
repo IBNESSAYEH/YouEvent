@@ -3,10 +3,13 @@
 namespace App\core;
 
 
-class Controller {
+trait Controller {
 
     
-    public static function view($filename) {
+    public static function view($filename, $data = []) {
+        if(!empty($data)){
+            extract($data);
+        }
        
         $file = __DIR__ . "/../views/$filename.php";
     
