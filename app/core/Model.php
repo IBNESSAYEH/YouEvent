@@ -4,11 +4,12 @@ namespace App\core;
 
 use App\core\Database;
 
-class Model extends Database{
-
+class Model {
+    use Database;
     protected $table ;
+    protected $errors = [];
     
-    public function finAll(){
+    public function findAll(){
         $query = "SELECT * from $this->table ";
         return $this->query($query);
     }
