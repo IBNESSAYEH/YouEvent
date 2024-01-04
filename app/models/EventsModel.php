@@ -9,7 +9,7 @@ use App\core\Database;
 use PDO;
 
 
-trait EventsModel {
+trait EventsModel  {
     use Database;
 
     private $connection;
@@ -33,25 +33,19 @@ trait EventsModel {
 
 
 
-    /**
-     * @return mixed
-     */
+    
     public function getId()
     {
+       
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
+ 
     public function setId($id)
     {
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
     public function getNom()
     {
         return $this->nom;
@@ -182,20 +176,24 @@ trait EventsModel {
             $query->bindValue(':id', $id);
             $query->execute();
             $result = $query->fetch(PDO::FETCH_OBJ);
+
+
+          
     
             return !empty($result) ? $result : false;
         }
-    
-        public function updateEvent($event)
+     
+        public function updateEvent()
         {
+         
             $query = $this->connection->prepare("UPDATE events SET nom = :nom, artiste = :artiste, description = :description, dateEvents = :dateEvents, id_user = :id_user, id_lieu = :id_lieu WHERE id = :id");
-            $query->bindValue(':id', $event->getId());
-            $query->bindValue(':nom', $event->getNom());
-            $query->bindValue(':artiste', $event->getArtiste());
-            $query->bindValue(':description', $event->getDescription());
-            $query->bindValue(':dateEvents', $event->getDateEvents());
-            $query->bindValue(':id_user', $event->getIdUser());
-            $query->bindValue(':id_lieu', $event->getIdLieu());
+            $query->bindValue(':id', $this->getId());
+            $query->bindValue(':nom', $this->getNom());
+            $query->bindValue(':artiste', $this->getArtiste());
+            $query->bindValue(':description', $this->getDescription());
+            $query->bindValue(':dateEvents', $this->getDateEvents());
+            $query->bindValue(':id_user', $this->getIdUser());
+            $query->bindValue(':id_lieu', $this->getIdLieu());
             $query->execute();
         }
     

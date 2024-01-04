@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>YouEvent</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">YouEvent</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= ROOT ?>">home</a>
-                </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Panier</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= ROOT ?>/reservation">Reservation</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">DashboardOrg</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">DashboardAdmin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sign In</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- Events Section -->
     <!-- Events Section -->
@@ -54,13 +9,14 @@
         <?php foreach ($events as $event): ?>
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300" class="card-img-top" alt="Event Image">
+                    <img src="https://les-seminaires.eu/wp-content/uploads/2019/04/organisation-evenement-grand-public.jpg" class="card-img-top" alt="Event Image">
                     <div class="card-body">
                         <h5 class="card-title"><?= htmlspecialchars($event->nom); ?></h5>
-                        <p class="card-text"><?= htmlspecialchars($event->description); ?></p>
-                        <p class="card-text"><?= htmlspecialchars($event->artiste); ?></p>
+                        <!-- <p class="card-text"><?= htmlspecialchars($event->description); ?></p>
+                        <p class="card-text"><?= htmlspecialchars($event->artiste); ?></p> -->
                         <p class="card-text"><?= htmlspecialchars($event->dateEvents); ?></p>
-                        <a href="#" class="btn btn-primary">Details</a>
+                        <a href="<?= ROOT ?>home/detail/<?= $event->id ?>" class="btn btn-primary">details</a>
+                        <a href="<?= ROOT ?>reservation/reserver/<?= $event->id ?>" class="btn btn-success">reserver</a>
                     </div>
                 </div>
             </div>
