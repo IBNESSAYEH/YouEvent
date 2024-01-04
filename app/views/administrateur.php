@@ -25,10 +25,8 @@
             <script>
             </script>
             <?php
-            include("UserModel.php");
-            $row1 = new UserModel();
-            $r =  $row1->getUers();
-            $s =  $row1->getRoles();
+           
+          
 
 
 
@@ -71,7 +69,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <a id='link' class="btn btn-danger btn-sm" href="update.php?id=1&idRole=2" ;>change the role</a>
+                            <a id='link' class="btn btn-danger btn-sm" href="<?= ROOT ?>administrateur/editRole/2/3" ;>change the role</a>
                         </div>
                     </div>
                 </div>
@@ -84,19 +82,25 @@
             var link = document.getElementById('link');
             var href = link.getAttribute('href');
             if (link) {
-                var updatedHref = href.replace(/id=\d+/, 'id=' + id);
+                // var updatedHref = href.replace(/\/\d+\//, '/' + id + '/');
+                var updatedHref = href.replace(/\/\d+\/\d+/, '/' + id + '/' + id);
                 link.setAttribute('href', updatedHref);
             }
         }
 
         function setIdRole(id) {
             var linki = document.getElementById('link');
-            var hrefi = link.getAttribute('href');
+            var href = link.getAttribute('href');
             if (linki) {
-                var updatedHref = hrefi.replace(/idRole=\d+/, 'idRole=' + id);
+      
+                var updatedHref = href.replace(/\/(\d+)$/, '/' + id);
                 link.setAttribute('href', updatedHref);
             }
         }
+
+
+
+        
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
