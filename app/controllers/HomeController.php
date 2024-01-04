@@ -11,16 +11,27 @@ class HomeController {
     use EventsModel;
 
     public function index() {
-        $events = $this->getEvents(); // Assuming getEvents is a method in EventsModel trait
-        
-        // Assuming you have a method like render in your Controller trait for rendering views
+        $events = $this->getEvents();
+    
         self::view('home', ['events' => $events]);
     }
-
-    public function edit() {
-        // Your edit method logic here
-
-        // Assuming you have a method like render in your Controller trait for rendering views
-        self::view('home');
+    public function detail($url) {
+       
+        $event = $this->getEventById($url);
+   
+        self::view('detail', ['event' => $event]);
     }
+
+    // public function edit() {
+
+    //    $this->setNom("journeeIntegration");
+    //    $this->setID(5);
+    //    $this->setArtiste("weld lhowwat");
+    //    $this->setDescription("journeeIntegratisssssssssssssson");
+    //    $this->setDateEvents("20/12/2020");
+    //    $this->setIdUser(7);
+    //    $this->setIdLieu(5);
+    //    $this->updateEvent();
+
+    // }
 }
