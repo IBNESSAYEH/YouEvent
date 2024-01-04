@@ -15,21 +15,16 @@ class AdministrateurController
     {
         $r =  $this->getUers();
         $s =  $this->getRoles();
-        self::view('administrateur', ['r' => $r, 's' => $s]);
+        $chat = $this->getReservation();
+        self::view('administrateur', ['r' => $r, 's' => $s, 'chat'=> $chat]);
     }
     public function editRole($id, $idRole)
     {
-
-        // Your edit method logic here
-        // $id = $_GET['id'];
-        // $idRole = $_GET['idRole'];
         $this->setId($id);
         $this->setIdRole($idRole);
         $this->modifierRole();
         $r =  $this->getUers();
         $s =  $this->getRoles();
         $this->index();
-        // Assuming you have a method like render in your Controller trait for rendering views
-
     }
 }
